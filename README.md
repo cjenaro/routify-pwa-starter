@@ -12,6 +12,12 @@ npm install -g svelte-pwa
 svelte-pwa path
 ```
 
+Or you can use directly the following command:
+
+```bash
+npx degit jenaro94/routify-pwa-starter path
+```
+
 ## Get started
 
 Install the dependencies...
