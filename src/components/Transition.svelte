@@ -14,13 +14,13 @@
       condition: c => c.toDescendant || c.routes[1].path.includes('index'),
       transition: fly,
       inParams: { x: $width, duration: 500, opacity: 1 },
-      outParams: { x: -$width, duration: 300, opacity: 1 },
+      outParams: { x: -$width - 100, duration: 400, opacity: 1 },
     },
     {
       condition: c => c.toAncestor || c.routes[0].path.includes('index'),
       transition: fly,
       inParams: { x: -$width, duration: 500, opacity: 1 },
-      outParams: { x: $width, duration: 300, opacity: 1 },
+      outParams: { x: $width + 100, duration: 400, opacity: 1 },
     },
     {
       // No matching config. We don't want a transition
