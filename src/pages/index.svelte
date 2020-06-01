@@ -29,4 +29,5 @@
 <nav>
   <a href={$url("/page-1")}>Page 1 &rarr;</a>
   <a href={$url("/parameter")}>Page with parameter &rarr;</a>
+  <a href={$url("/test/page")}>Nested path &rarr;</a>
 </nav>

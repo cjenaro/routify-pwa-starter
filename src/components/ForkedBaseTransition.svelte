@@ -28,11 +28,13 @@
   $: ({ transition, inParams, outParams } = normalizedConfig)
   
   function isAncestor(descendant, ancestor) {
-    if(descendant.parent === ancestor.parent) return false
+    /* if(descendant.parent === ancestor.parent) return false */
     const { shortPath } = descendant.parent
     const { shortPath: shortPath2 } = ancestor.parent
-    
-    return ancestor.isIndex && shortPath !== shortPath2 && shortPath.startsWith(shortPath2)
+    const descendantLength = descendant.filepath ? descendant.filepath.split('/').length : 0
+    const ancestorLength = ancestor.filepath ? ancestor.filepath.split('/').length : 0
+    return descendantLength > ancestorLength || descendantLength === ancestorLength && ancestor.isIndex
+    /* return ancestor.isIndex && shortPath !== shortPath2 && shortPath.startsWith(shortPath2) */
   }
 </script>
 
@@ -43,6 +45,9 @@
     width: 100%;
     left: 0;
     top: 0;
+    padding: 8px;
+    margin: 0;
+    box-sizing: border-box;
   }
 </style>
 

@@ -5,8 +5,21 @@
   const width = writable();
 </script>
 
+<style>
+  #layout {
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
+  }
+
+  a {
+    padding: 8px;
+    display: block;
+  }
+</style>
+
 <a href={$url("/")}>Home</a>
-<div bind:offsetWidth={$width}>
+<div id="layout" bind:offsetWidth={$width}>
   <slot decorator={Transition} scoped={{ width }} />
 </div>
 
